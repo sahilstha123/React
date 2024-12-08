@@ -1,6 +1,5 @@
 import React from "react";
-const list = []
-export const List = () => {
+export const List = ({list}) => {
   return (
     <div className="list ">
       <ul>

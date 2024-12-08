@@ -4,9 +4,12 @@ import { Form } from "./components/Form";
 import { List } from "./components/List";
 
 function App() {
-  
   const [list, setList] = useState([]);
-  
+
+  const addUser = (name) => {
+    setList([...list, name]);
+  };
+
   return (
     <>
       <div
@@ -16,8 +19,8 @@ function App() {
         }}
       >
         <div className="userList card p-3 shadow">
-         <Form />
-          <List />
+          <Form addUser = {addUser}/>
+          <List list = {list} />
         </div>
       </div>
     </>

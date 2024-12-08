@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { Display } from "./Display";
-const [name, setName] = useStatete("");
-const handleOnchange = (e) => {
-  const { value } = e.target;
-  setName(value);
-};
-
-const handleOnsubmit = (e) => {
-  e.preventDefault();
-  // setList([...list, name]);
-  console.log(list)
-};
-export const Form = () => {
+export const Form = ({addUser}) => {
+  const [name, setName] = useState("");
+  const handleOnchange = (e) => {
+    const { value } = e.target;
+    setName(value);
+  };
+  
+  const handleOnsubmit = (e) => {
+    e.preventDefault();
+    addUser(name)
+    
+    // console.log(list)
+  };
   return (
     <div className="form">
-      <Display />
+      <Display name={name}/>
       <form action="" onSubmit={handleOnsubmit}>
         <input type="text" onChange={handleOnchange} />
         <button className="btn btn-danger mx-2">Add User</button>
