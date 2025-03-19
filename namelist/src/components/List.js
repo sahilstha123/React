@@ -1,12 +1,12 @@
 import React from "react";
-export const List = ({list}) => {
+export const List = ({item}) => {
   return (
-    <div className="list ">
-      <ul>
-        {list.map((item, i) => {
-          return <li key={i}>{item}</li>;
-        })}
-      </ul>
-    </div>
+    <div className="list">
+      {item.map((item, index) => (
+            <li key={index} >
+              {item}
+            </li>
+          ))}
+      </div>
   );
 };
